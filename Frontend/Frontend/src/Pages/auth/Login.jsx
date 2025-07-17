@@ -1,8 +1,10 @@
 // src/pages/auth/Login.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -22,6 +24,7 @@ const Login = () => {
       // API Call (connect to backend later)
       console.log("Logging in with:", form);
       alert("Login successful!");
+      navigate("/");
     } catch (err) {
       console.error(err);
       setError("Login failed. Please try again.");

@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo + Title */}
         <div className="flex items-center space-x-2">
-          <img src="" alt="GymPro Logo" className="h-8 w-8" />
+          <img src="https://pngimg.com/uploads/dumbbell/dumbbell_PNG102652.png" alt="GymPro Logo" className="h-8 w-8" />
           <span className="text-xl font-bold text-gray-900">GymPro</span>
         </div>
 

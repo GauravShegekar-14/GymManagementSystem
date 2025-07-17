@@ -18,6 +18,7 @@ import { Star, Play, Dumbbell,
   MapPin,
   Phone,
   Mail } from "lucide-react";
+import Footer from '../components/Footer';
 
 const Home = () => {
      const features = [
@@ -65,17 +66,8 @@ const Home = () => {
       icon: <BarChart3 className="h-8 w-8 text-blue-600" />,
       title: "Analytics Dashboard",
       description: "Real-time insights, performance metrics, and revenue analytics."
-    },
-    {
-      icon: <Smartphone className="h-8 w-8 text-blue-600" />,
-      title: "Mobile App",
-      description: "Manage your fitness from anywhere using our member mobile app."
-    },
-    {
-      icon: <MessageSquare className="h-8 w-8 text-blue-600" />,
-      title: "Communication Hub",
-      description: "Send messages, announcements, and push notifications effortlessly."
     }
+   
   ];
   return (
     <div>
@@ -170,72 +162,8 @@ const Home = () => {
 </section>
 
 {/* footer Section */}
-<footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-          {/* Logo & About */}
-          <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
-              <Dumbbell className="h-8 w-8 text-blue-400 mr-2" />
-              <span className="text-xl font-bold">GymPro</span>
-            </div>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">
-              Transform your body and mind with our state-of-the-art facilities and expert trainers.
-            </p>
-            <div className="flex space-x-4 mt-2">
-              <Facebook className="h-6 w-6 text-gray-400 hover:text-blue-400 cursor-pointer" />
-              <Twitter className="h-6 w-6 text-gray-400 hover:text-blue-400 cursor-pointer" />
-              <Instagram className="h-6 w-6 text-gray-400 hover:text-blue-400 cursor-pointer" />
-            </div>
-          </div>
+<Footer />
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">Home</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">Classes</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">Trainers</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">Membership</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-            <div className="space-y-3 text-gray-400 text-sm">
-              <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-blue-400 mr-2" />
-                <span>123 Fitness St, City</span>
-              </div>
-              <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-400 mr-2" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-400 mr-2" />
-                <span>info@gympro.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-10 pt-6 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm">
-            &copy; {new Date().getFullYear()} GymPro. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
         </div>
 
         
