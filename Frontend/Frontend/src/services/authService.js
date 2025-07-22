@@ -1,9 +1,9 @@
-// src/services/authService.js
-import axios from "axios";
+import { Auth_API } from "../config/member_API";
 
-const API_URL = "http://localhost:5000/api/auth"; // Update as per your backend
-
-export const registerUser = async (userData) => {
-  const response = await axios.post(`${API_URL}/register`, userData);
-  return response.data;
+ const registerMember = async (formData) => {
+  const res = await Auth_API.post("/register", formData);
+  localStorage.setItem("token", res.data.token);
+  return res.data;
 };
+
+export  {registerMember };

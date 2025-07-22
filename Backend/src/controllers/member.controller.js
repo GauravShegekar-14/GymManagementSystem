@@ -15,7 +15,7 @@ const registerMember = async (req, res) => {
       email,
       password,
       phone,
-      dob,
+   
       gender,
       address,
       emergencyContact,
@@ -36,7 +36,7 @@ const registerMember = async (req, res) => {
         email,
         password: hashedPassword,
         phone,
-        dob,
+  
         gender,
         address,
         emergencyContact,

@@ -14,7 +14,7 @@ memberRouter.post(
       .isLength({ min: 6 })
       .withMessage('Password must be at least 6 characters long'),
     body('phone').notEmpty().withMessage('Phone number is required'),
-    body('dob').isDate().withMessage('Valid date of birth is required'),
+    // body('dob').isDate().withMessage('Valid date of birth is required'),
     body('gender')
       .isIn(['Male', 'Female', 'Other'])
       .withMessage('Gender must be Male, Female or Other'),
@@ -23,8 +23,8 @@ memberRouter.post(
       .notEmpty()
       .withMessage('Emergency contact is required'),
     body('membershipType')
-      .isIn(['Monthly', 'Quarterly', 'Yearly'])
-      .withMessage('Membership type must be Monthly, Quarterly, or Yearly'),
+      .isIn(['Monthly', 'Quarterly','Half-Yearly', 'Yearly'])
+      .withMessage('Membership type must be Monthly, Quarterly, Half-Yearly, Yearly'),
     body('startDate')
       .optional()
       .isISO8601()

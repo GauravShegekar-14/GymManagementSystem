@@ -30,10 +30,7 @@ const memberSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    dob: {
-      type: Date,
-      required: true,
-    },
+   
    
     gender: {
       type: String,
@@ -58,7 +55,7 @@ const memberSchema = new mongoose.Schema(
 
     membershipType: {
       type: String,
-      enum: ["Monthly", "Quarterly","half-yearly", "Yearly"],
+      enum: ["Monthly", "Quarterly","Half-Yearly", "Yearly"],
       required: true,
     },
     startDate: {

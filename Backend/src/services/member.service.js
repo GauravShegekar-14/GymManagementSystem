@@ -6,7 +6,7 @@ export const createMember = async ({
     email,
     password,
     phone,
-    dob,
+   
     gender,
     address,
     emergencyContact,
@@ -20,7 +20,7 @@ export const createMember = async ({
         !email ||
         !password ||
         !phone ||
-        !dob ||
+
         !gender ||  // corrected to !gender
         !address ||
         !emergencyContact ||
@@ -37,7 +37,7 @@ export const createMember = async ({
         email,
         password,
         phone,
-        dob,
+
         gender,
         address,
         emergencyContact,
