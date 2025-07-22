@@ -11,13 +11,17 @@ const Register = () => {
     firstName: "",
     lastName: "",
     email: "",
+    password:"",
     phone: "",
     dob: "",
     gender: "",
     address: "",
-    emergencyContactName: "",
-    emergencyContactPhone: "",
+    emergencyContactName: {
+      name: "",
+      phone: "",
+    },
     membershipType: "",
+    startDate: "",
   });
 
   const handleChange = (e) => {
