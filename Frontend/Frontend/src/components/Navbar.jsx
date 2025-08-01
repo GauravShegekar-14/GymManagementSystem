@@ -1,7 +1,7 @@
 import React, { useState,useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react"; // ChevronDown for dropdown
-
+import { logoutMember } from "../services/authService"; // Import logout function
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,12 +11,20 @@ const Navbar = () => {
   const dropdownRefMobile = useRef(null);
    const dropdownRef = useRef(null);
 
-  const isLoggedIn = true; // Change this to false to hide profile section
+ const isLoggedIn = !!localStorage.getItem("token");
+// Change this to false to hide profile section
   const userRole = "member"; // or "admin", "trainer", etc.
 
-  const handleLogout = () => {
-    alert("Logged out!");
-    navigate("/login");
+  const handleLogout = async () => {
+    try {
+      await logoutMember();
+      localStorage.removeItem("token");
+      alert("Logged out successfully.");
+      navigate("/login");
+    } catch (err) {
+      console.error("Logout error:", err);
+      alert("Logout failed. Please try again.");
+    }
   };
 
      // Handle outside click for desktop dropdown

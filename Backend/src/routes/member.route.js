@@ -1,7 +1,8 @@
 import express from 'express';
-import { registerMember,loginMember,getMemberProfile,logoutMember } from '../controllers/member.controller.js';
+import { registerMember,loginMember,getMemberProfile,logoutMember,updateMemberProfile } from '../controllers/member.controller.js';
 import { body } from 'express-validator';
 import { authMember } from '../middleares/auth.middleware.js';
+import { upload } from '../middleares/upload.middleware.js';
 const memberRouter = express.Router();
 
 memberRouter.post(
@@ -43,5 +44,59 @@ loginMember
 
 memberRouter.get('/profile',authMember,getMemberProfile)
 memberRouter.get('/logout',authMember,logoutMember)
+
+
+memberRouter.put(
+  '/profile-update/:id',
+  authMember,
+  upload.single('profileImage'),
+  [
+    body('firstName')
+      .optional()
+      .notEmpty()
+      .withMessage('First name cannot be empty'),
+
+    body('lastName')
+      .optional()
+      .notEmpty()
+      .withMessage('Last name cannot be empty'),
+
+    body('email')
+      .optional()
+      .isEmail()
+      .withMessage('Valid email is required'),
+
+    body('phone')
+      .optional()
+      .notEmpty()
+      .withMessage('Phone number cannot be empty'),
+
+    body('gender')
+      .optional()
+      .isIn(['Male', 'Female', 'Other'])
+      .withMessage('Gender must be Male, Female or Other'),
+
+    body('address')
+      .optional()
+      .isString(),
+
+    body('emergencyContact')
+      .optional()
+      .notEmpty()
+      .withMessage('Emergency contact is required'),
+
+    body('membershipType')
+      .optional()
+      .isIn(['Monthly', 'Quarterly', 'Half-Yearly', 'Yearly'])
+      .withMessage('Membership type must be Monthly, Quarterly, Half-Yearly, or Yearly'),
+
+    body('startDate')
+      .optional()
+      .isISO8601()
+      .withMessage('Start date must be a valid date'),
+  ],
+  updateMemberProfile
+);
+
 
 export {memberRouter};

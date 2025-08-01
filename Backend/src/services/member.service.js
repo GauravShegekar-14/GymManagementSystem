@@ -6,7 +6,7 @@ export const createMember = async ({
     email,
     password,
     phone,
-   
+    ProfileImage,
     gender,
     address,
     emergencyContact,
@@ -37,7 +37,7 @@ export const createMember = async ({
         email,
         password,
         phone,
-
+        ProfileImage,
         gender,
         address,
         emergencyContact,

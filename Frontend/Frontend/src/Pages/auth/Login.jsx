@@ -1,6 +1,7 @@
 // src/pages/auth/Login.jsx
 import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
+import { loginMember } from "../../services/authService";
 
 const Login = () => {
 
@@ -22,6 +23,7 @@ const Login = () => {
 
     try {
       // API Call (connect to backend later)
+      const res = await loginMember(form);
       console.log("Logging in with:", form);
       alert("Login successful!");
       navigate("/");
