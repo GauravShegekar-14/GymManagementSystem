@@ -26,6 +26,7 @@ const authMember = async (req, res, next) => {
 
     req.member = member;
 
+ 
     next();
   } catch (err) {
     return res.status(401).json({ message: 'Unauthorized - Invalid Token' });

@@ -6,7 +6,7 @@ export const createMember = async ({
     email,
     password,
     phone,
-    ProfileImage,
+    profileImage = "uploads/default.jpg", // Default profile image path
     gender,
     address,
     emergencyContact,
@@ -37,7 +37,7 @@ export const createMember = async ({
         email,
         password,
         phone,
-        ProfileImage,
+        profileImage,
         gender,
         address,
         emergencyContact,

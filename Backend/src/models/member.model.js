@@ -30,7 +30,7 @@ const memberSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    ProfileImage: {
+    profileImage: {
       type: String,
       default: "../uploads/default.jpg",
     },

@@ -7,8 +7,8 @@ import path from 'path';
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     const username = req.member?.email || 'default_user'; // safer than name due to spaces
-    const folderPath = path.join('../uploads', username);
-
+    const folderPath = path.join('uploads', username);
+    console.log(`Uploading to: ${folderPath}`);
     // Create folder if not exists
     fs.mkdirSync(folderPath, { recursive: true });
 
@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
     cb(null, 'profile.jpg'); // always overwrite
   },
 });
+
 
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image/')) {

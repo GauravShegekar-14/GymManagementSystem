@@ -16,16 +16,18 @@ const Navbar = () => {
   const userRole = "member"; // or "admin", "trainer", etc.
 
   const handleLogout = async () => {
-    try {
-      await logoutMember();
-      localStorage.removeItem("token");
-      alert("Logged out successfully.");
-      navigate("/login");
-    } catch (err) {
-      console.error("Logout error:", err);
-      alert("Logout failed. Please try again.");
-    }
-  };
+  try {
+    await logoutMember(); // Call logout API if required
+    localStorage.clear(); // Clear all local storage items
+    sessionStorage.clear(); // Clear all session storage items
+    alert("Logged out successfully.");
+    navigate("/login"); // Redirect to login
+  } catch (err) {
+    console.error("Logout error:", err);
+    alert("Logout failed. Please try again.");
+  }
+};
+
 
      // Handle outside click for desktop dropdown
   useEffect(() => {
